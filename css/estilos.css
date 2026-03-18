@@ -1,292 +1,215 @@
-/* ===== VARIABLES Y RESET ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --rojo: #e10600;
-    --negro: #111111;
-    --gris-oscuro: #1e1e1e;
-    --gris-medio: #333333;
-    --gris-claro: #cccccc;
-    --blanco: #ffffff;
-    --amarillo: #ffd700;
-}
-
+/* GENERAL */
 body {
-    font-family: Georgia, serif;
-    background-color: var(--negro);
-    color: var(--blanco);
+    font-family: Arial, sans-serif;
+    background-color: #111111;
+    color: #ffffff;
     font-size: 16px;
-    line-height: 1.6;
 }
 
-/* ===== HEADER ===== */
-header {
-    background-color: var(--rojo);
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* HEADER */
+header {    
+    background-color: #e10600;
+    padding: 20px;
 }
 
 header h1 {
-    font-family: 'Arial Black', Arial, sans-serif;
-    font-size: 2rem;
-    color: var(--blanco);
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-style: italic;
+    letter-spacing: 6px; /* separa las letras, da efecto de velocidad (buscado en internet) */
+    text-shadow: 3px 3px 0px #000000; /* sombra negra detrás del texto (buscado en internet) */
 }
 
 header h1 span {
-    color: var(--amarillo);
+    color: #ffd700;
 }
 
-/* ===== NAV ===== */
+header p {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* NAV */
 nav {
-    background-color: var(--gris-oscuro);
-    padding: 0 40px;
+    background-color: #222222;
+    padding: 10px;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 10px;
+    display: flex; /* coloca los enlaces en fila */
+    gap: 5px;
 }
 
 nav ul li a {
-    display: inline-block;
-    color: var(--blanco);
-    text-decoration: none;
-    padding: 15px 20px;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 3px solid transparent;
+    display: block;
+    color: #ffffff;
+    padding: 10px 18px;
 }
 
 nav ul li a:hover {
-    color: var(--amarillo);
-    border-bottom: 3px solid var(--rojo);
+    color: #ffd700;
+    background-color: #333333;
 }
 
 nav ul li a.activo {
-    color: var(--rojo);
-    border-bottom: 3px solid var(--rojo);
+    color: #e10600;
 }
 
-/* ===== MAIN ===== */
+/* MAIN */
 main {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
+    width: 90%;
+    margin: 30px auto; /* auto en los lados centra el bloque horizontalmente */
+    padding: 20px;
 }
 
-/* ===== HERO / BANNER ===== */
+/* HERO */
 .hero {
-    background-color: var(--gris-oscuro);
-    border-left: 5px solid var(--rojo);
-    padding: 40px;
-    margin-bottom: 40px;
+    background-color: #222222;
+    padding: 30px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
 .hero h2 {
-    font-size: 2rem;
-    color: var(--rojo);
-    text-transform: uppercase;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #e10600;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 1.1rem;
-    color: var(--gris-claro);
-    max-width: 700px;
-    margin: 0 auto;
+    color: #cccccc;
 }
 
 .hero p::first-letter {
-    font-size: 2rem;
-    color: var(--rojo);
-    font-weight: bold;
-    float: left;
-    margin-right: 6px;
-    line-height: 1;
+    font-size: 2.5rem;
+    color: #e10600;
 }
 
-/* ===== SECCIONES ===== */
+/* SECCIONES */
 section {
     margin-bottom: 40px;
 }
 
 section h2 {
-    font-size: 1.5rem;
-    color: var(--rojo);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--gris-medio);
+    font-size: 1.4rem;
+    color: #e10600;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
 }
 
-/* ===== GRID DE TARJETAS ===== */
+/* TARJETAS */
 .grid-tarjetas {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
 }
 
-/* ===== ARTICLE / TARJETA ===== */
 article {
-    background-color: var(--gris-oscuro);
-    border: 1px solid var(--gris-medio);
+    background-color: #222222;
     padding: 20px;
-    flex: 1 1 280px;
-    position: relative;
+    width: 30%;
 }
 
 article::before {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 4px;
-    background-color: var(--rojo);
-    margin-bottom: 12px;
+    content: '— '; 
+    color: #e10600;
 }
 
 article h3 {
-    font-size: 1.1rem;
-    color: var(--amarillo);
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    color: #ffd700;
+    margin-bottom: 8px;
 }
 
 article p {
-    color: var(--gris-claro);
-    font-size: 0.95rem;
+    color: #cccccc;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
 }
 
-article p::first-letter {
-    font-size: 1.4rem;
-    color: var(--rojo);
-    font-weight: bold;
-}
-
-/* ===== TABLA CLASIFICACIÓN ===== */
-.tabla-container {
-    overflow-x: auto;
-}
-
+/* TABLA */
 table {
     width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
 }
 
 table thead {
-    background-color: var(--rojo);
-    color: var(--blanco);
+    background-color: #e10600;
 }
 
-table thead th {
-    padding: 12px 15px;
+table th {
+    padding: 10px 15px;
     text-align: left;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #ffffff;
 }
 
-table tbody tr {
-    border-bottom: 1px solid var(--gris-medio);
+table td {
+    padding: 10px 15px;
+    color: #cccccc;
 }
 
 table tbody tr:hover {
-    background-color: var(--gris-medio);
+    background-color: #333333;
 }
 
-table tbody td {
-    padding: 12px 15px;
-    color: var(--gris-claro);
+td.posicion {
+    color: #ffd700;
 }
 
-table tbody td.posicion {
-    color: var(--amarillo);
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* ===== BOTONES ===== */
+/* BOTÓN */
 .btn {
-    display: inline-block;
-    background-color: var(--rojo);
-    color: var(--blanco);
-    padding: 10px 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    border: none;
-    cursor: pointer;
+    display: block;
+    background-color: #e10600;
+    color: #ffffff;
+    padding: 10px 22px;
     margin-top: 15px;
+    font-size: 0.9rem;
+    width: 180px;
+    text-align: center;
 }
 
 .btn:hover {
-    background-color: var(--amarillo);
-    color: var(--negro);
+    background-color: #ffd700;
+    color: #111111;
 }
 
-/* ===== CIRCUITO INFO ===== */
+/* DATOS CIRCUITO */
 .circuito-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: flex; 
+    gap: 15px;
     margin-bottom: 20px;
 }
 
 .circuito-dato {
-    background-color: var(--gris-oscuro);
-    border: 1px solid var(--gris-medio);
-    padding: 15px 20px;
-    flex: 1 1 180px;
+    background-color: #222222;
+    padding: 15px;
+    width: 22%;
     text-align: center;
 }
 
 .circuito-dato::after {
-    content: '▼';
-    display: block;
-    color: var(--rojo);
-    font-size: 0.8rem;
-    margin-top: 5px;
+    content: ' ★'; /* añade una estrella decorativa después del contenido */
+    color: #e10600;
 }
 
 .circuito-dato span {
     display: block;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--amarillo);
+    font-size: 1.3rem;
+    color: #ffd700;
 }
 
 .circuito-dato p {
     font-size: 0.8rem;
-    color: var(--gris-claro);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #cccccc;
 }
 
-/* ===== FORMULARIO DE CONTACTO ===== */
+/* FORMULARIO */
 .formulario {
-    background-color: var(--gris-oscuro);
-    padding: 30px;
-    border: 1px solid var(--gris-medio);
+    background-color: #222222;
+    padding: 25px;
 }
 
 .formulario label {
     display: block;
-    color: var(--gris-claro);
+    color: #cccccc;
     margin-bottom: 5px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .formulario input,
@@ -294,120 +217,71 @@ table tbody td.posicion {
 .formulario select {
     display: block;
     width: 100%;
-    background-color: var(--gris-medio);
-    border: 1px solid var(--gris-claro);
-    color: var(--blanco);
-    padding: 10px 15px;
-    margin-bottom: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 8px 12px;
+    margin-bottom: 15px;
     font-size: 0.95rem;
-    font-family: Georgia, serif;
 }
 
 .formulario input:hover,
 .formulario textarea:hover,
 .formulario select:hover {
-    border-color: var(--rojo);
+    background-color: #444444;
 }
 
 .formulario textarea {
-    height: 120px;
-    resize: vertical;
+    height: 110px;
 }
 
-.formulario button:hover {
-    background-color: var(--amarillo);
-    color: var(--negro);
-    cursor: pointer;
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
-    background-color: var(--gris-oscuro);
-    border-top: 3px solid var(--rojo);
+    background-color: #222222;
     text-align: center;
-    padding: 25px 40px;
-    color: var(--gris-claro);
+    padding: 20px;
+    color: #cccccc;
     font-size: 0.85rem;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 footer::before {
-    content: '🏁 ';
+    content: '🏁 '; /* añade la bandera a cuadros antes del texto del footer */
 }
 
 footer a {
-    color: var(--rojo);
-    text-decoration: none;
+    color: #e10600;
 }
 
 footer a:hover {
-    color: var(--amarillo);
+    color: #ffd700;
 }
 
-/* ===== RESPONSIVE - MEDIA QUERIES ===== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px 20px;
-        gap: 10px;
-    }
-
-    header h1 {
-        font-size: 1.4rem;
-    }
-
-    nav {
-        padding: 0 10px;
-    }
 
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0;
-    }
-
-    nav ul li a {
-        padding: 10px 12px;
-        font-size: 0.8rem;
+        flex-direction: column; 
     }
 
     main {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-
-    .hero {
-        padding: 25px 20px;
-    }
-
-    .hero h2 {
-        font-size: 1.4rem;
+        width: 100%;
+        padding: 10px;
     }
 
     .grid-tarjetas {
-        flex-direction: column;
+        flex-direction: column; 
     }
 
     article {
-        flex: 1 1 100%;
+        width: 100%;
     }
 
     .circuito-info {
-        flex-direction: column;
+        flex-direction: column; 
     }
 
-    table thead th,
-    table tbody td {
-        padding: 8px 10px;
-        font-size: 0.85rem;
+    .circuito-dato {
+        width: 100%;
     }
 
-    .formulario {
-        padding: 20px 15px;
-    }
-
-    footer {
-        padding: 20px 15px;
-    }
 }
